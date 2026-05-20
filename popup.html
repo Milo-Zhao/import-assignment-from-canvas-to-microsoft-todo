@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Canvas to Microsoft To Do</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup">
+    <header class="popup__header">
+      <img src="icons/icon48.png" alt="" class="popup__logo" />
+      <div>
+        <h1 class="popup__title">Canvas → To Do</h1>
+        <p class="popup__subtitle">Microsoft To Do Integration</p>
+      </div>
+    </header>
+
+    <div id="state-signed-out" class="popup__state" hidden>
+      <p class="popup__message">Sign in with Microsoft to export Canvas assignments to To Do.</p>
+      <button id="btn-sign-in" class="btn btn--primary btn--full">Sign in with Microsoft</button>
+    </div>
+
+    <div id="state-signed-in" class="popup__state" hidden>
+      <div class="status-badge status-badge--ok">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z" fill="currentColor"/></svg>
+        Connected to Microsoft
+      </div>
+      <p class="popup__message popup__message--small">
+        Visit a Canvas assignment page and click <strong>Add to To Do</strong> next to any assignment.
+      </p>
+      <button id="btn-sign-out" class="btn btn--ghost btn--full">Sign Out</button>
+    </div>
+
+    <div id="state-error" class="popup__state" hidden>
+      <p class="popup__message popup__message--error" id="error-message">Something went wrong.</p>
+      <button id="btn-retry" class="btn btn--primary btn--full">Retry Sign In</button>
+    </div>
+
+    <div id="loading" class="popup__loading">
+      <div class="spinner"></div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Canvas to Microsoft To Do — Setup</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="page__header">
+      <img src="icons/icon48.png" alt="" class="page__logo" />
+      <div>
+        <h1 class="page__title">Canvas → Microsoft To Do</h1>
+        <p class="page__subtitle">Setup &amp; Configuration</p>
+      </div>
+    </header>
+
+    <main class="page__main">
+
+      <!-- Sign in -->
+      <section class="card">
+        <h2 class="card__title">
+          Connect Your Microsoft Account
+        </h2>
+
+        <div id="auth-signed-out" hidden>
+          <p class="card__desc">Click below to sign in and grant the extension permission to create tasks in Microsoft To Do.</p>
+          <button id="btn-sign-in" class="btn btn--primary btn--ms">
+            <svg viewBox="0 0 21 21" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="1" y="1" width="9" height="9" fill="#f25022"/>
+              <rect x="11" y="1" width="9" height="9" fill="#7fba00"/>
+              <rect x="1" y="11" width="9" height="9" fill="#00a4ef"/>
+              <rect x="11" y="11" width="9" height="9" fill="#ffb900"/>
+            </svg>
+            Sign in with Microsoft
+          </button>
+        </div>
+
+        <div id="auth-signed-in" hidden>
+          <div class="status-badge status-badge--ok">
+            <svg viewBox="0 0 16 16" fill="none" width="14" height="14">
+              <path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z" fill="currentColor"/>
+            </svg>
+            Connected to Microsoft To Do
+          </div>
+          <p class="card__desc card__desc--small">You're all set! Visit any Canvas assignment page to see the <strong>Add to To Do</strong> button.</p>
+          <button id="btn-sign-out" class="btn btn--ghost">Sign Out</button>
+        </div>
+
+        <div id="auth-loading" hidden>
+          <div class="spinner"></div>
+        </div>
+
+        <p id="auth-error" class="error-text" hidden></p>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
